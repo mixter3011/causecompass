@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464095907484",
+    "project_id": "causecompass-a9776",
+    "storage_bucket": "causecompass-a9776.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464095907484:android:d37285a852f91224112759",
+        "android_client_info": {
+          "package_name": "com.example.causecompass"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX267M77mZOU63UvX3_fpoLOD1_3cSZaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
