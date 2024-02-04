@@ -24,7 +24,7 @@ class ChoicePage extends StatelessWidget {
   void navigateToHomePage(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HomePage()),
+      MaterialPageRoute(builder: (context) => HomePage()),
     );
   }
 

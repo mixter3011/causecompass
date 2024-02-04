@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:causecompass/auth/auth_service.dart';
 import 'package:causecompass/components/my_button.dart';
 import 'package:causecompass/components/my_textfield.dart';
 import 'package:causecompass/components/square_tile.dart';
@@ -15,7 +16,37 @@ class RegisterPage extends StatelessWidget {
   final void Function()? onTap;
 
   // sign user in method
-  void Register(){}
+  void register(BuildContext context){
+    // get auth service 
+    final _auth = AuthService();
+
+    // passwords match -> create user
+    if (passwordController.text == confirmpasswordController) {
+      try {
+        _auth.signInWithEmailPassword(
+          usernameController.text, 
+          passwordController.text,
+        );
+      } catch (e) {
+        showDialog(
+          context: context, 
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    }
+    // passwords don't match -> tell user to fix 
+
+    else {
+      showDialog(
+        context: context, 
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match!"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +140,7 @@ class RegisterPage extends StatelessWidget {
                   // sign in 
                   MyButton(
                     text: "Register",
-                    onTap: Register,
+                    onTap: () => register(context),
                   ),
 
                   const SizedBox(height: 20),
